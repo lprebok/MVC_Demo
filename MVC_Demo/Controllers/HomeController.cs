@@ -8,6 +8,7 @@ namespace MVC_Demo.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]
         public ActionResult Index()
         {
             return View();
@@ -26,5 +27,19 @@ namespace MVC_Demo.Controllers
 
             return View();
         }
+
+        public ActionResult TestFilter()
+        {
+            return View();
+        }
+
+
+
+
+
+
+
+
+
     }
 }
