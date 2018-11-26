@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "ShowPerson";
+}
+
+<h2>ShowPerson</h2>
+
+@model MVC_Demo.Models.Person
+
+<h>姓名是：@Model.Age</h>
+
+<br />
+@showName()
+
+@helper showName()
+{
+    @Model.Name
+    }
+
+<br />
+@Html.ActionLink("Test", "Index", "Home")
+
+<br />
+@Html.ActionLink("删除", "Index", new{id=23},new { onclick="return confrim('确认删除！')"})
+
+@using (Html.BeginForm("", "", FormMethod.Post))
+{
+    @Html.TextBox("txt",Model.Name)
+}
+
+<br />
+@Html.DropDownListFor(p=>p.Name,(SelectList)ViewData["PersonList"],"Select One")
+
